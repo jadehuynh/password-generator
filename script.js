@@ -51,6 +51,11 @@ var userChoice= confirm("Would you like special characters?")
       userSelect.spec= true
       console.log(userChoice.spec)
     }
+
+if (userSelect.lower === false && userSelect.upper === false && userSelect.num === false && userSelect.spec === false) {
+    alert("Please select at least one character type.")
+    generatePassword()
+  }
   console.log(charInput)
   return;
 }
