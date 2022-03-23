@@ -26,9 +26,35 @@ function writePassword() {
 
 // Add event listener to generate button
 function generatePassword() {
-  var charInput=()
-  prompt()
+  var charInput= prompt("Please select between 8 and 128 characters.")
+    if (charInput < 8 || charInput > 128) {
+      alert('Selection was incorrect. Please select between 8 and 128 characters.')
+        generatePassword()
+    }
+var userChoice= confirm("Would you like lowercase characters?")
+    if (userChoice) {
+      userSelect.lower= true
+      console.log(userChoice.lower)
+    }
+var userChoice= confirm("Would you like uppercase characters?")
+    if (userChoice) {
+      userSelect.upper= true
+      console.log(userChoice.upper)
+    }
+var userChoice= confirm("Would you like numeric characters?")
+    if (userChoice) {
+      userSelect.num= true
+      console.log(userChoice.num)
+    }
+var userChoice= confirm("Would you like special characters?")
+    if (userChoice) {
+      userSelect.spec= true
+      console.log(userChoice.spec)
+    }
+  console.log(charInput)
   return;
 }
+
+
 
 generateBtn.addEventListener("click", writePassword);
