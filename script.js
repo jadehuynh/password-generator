@@ -8,7 +8,7 @@ var specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "-", ".",
 var digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var newPassword = "";
 // Write password to the #password input
-//var pool = []
+var container = []
 
 var userSelect = {
   upper: undefined,
@@ -37,33 +37,37 @@ function generatePassword() {
       alert("Selection was incorrect. Please select between 8 and 128 characters.")
         generatePassword()
     }
-var userChoice= confirm("Would you like lowercase characters?")
+  var userChoice= confirm("Would you like lowercase characters?")
     if (userChoice) {
       userSelect.lower= true
+      container.push(lowCase)
       console.log(userSelect.lower)
     } else {
       userSelect.lower=false
       console.log(userSelect.lower);
     }
-var userChoice= confirm("Would you like uppercase characters?")
+  var userChoice= confirm("Would you like uppercase characters?")
     if (userChoice) {
       userSelect.upper= true
+      container.push(upperCase)
       console.log(userSelect.upper)
     }  else {
       userSelect.upper=false
       console.log(userSelect.upper);
     }
-var userChoice= confirm("Would you like numeric characters?")
+  var userChoice= confirm("Would you like numeric characters?")
     if (userChoice) {
       userSelect.digits= true
+      container.push(digits)
       console.log(userSelect.digits)
     } else {
       userSelect.digits=false
       console.log(userSelect.digits);
     }
-var userChoice= confirm("Would you like special characters?")
+  var userChoice= confirm("Would you like special characters?")
     if (userChoice) {
       userSelect.spec= true
+      container.push(specChar)
       console.log(userSelect.spec)
     } else {
       userSelect.spec=false
@@ -74,11 +78,18 @@ if (userSelect.lower === false && userSelect.upper === false && userSelect.digit
     alert("Please select at least one character type.")
     generatePassword()
   }
+numberGenerator(charInput)
   //return generatePassword()
+var generatedPassword = newPassword
+newPassword = ""
+return generatedPassword
 }
-function passGen (x) {
-for (let i = 0; i < userSelect; i++) {
-  var selectedChar = userSelect[Math.floor(Math.random() * userSelect.length)]
+
+
+function numberGenerator (x) {
+for (let i = 0; i < x; i++) {
+  var selectedChar = container[Math.floor(Math.random() * container.length)]
   newPassword = newPassword.concat(selectedChar[Math.floor(Math.random() * selectedChar.length) ])
 }
+return newPassword
 }
