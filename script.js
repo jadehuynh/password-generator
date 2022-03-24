@@ -48,37 +48,29 @@ function generatePassword() {
     if (userChoice) {
       userSelect.lower= true
       container.push(lowCase)
-      console.log(userSelect.lower)
     } else {
       userSelect.lower=false
-      console.log(userSelect.lower);
     }
   var userChoice= confirm("Would you like uppercase characters?")
     if (userChoice) {
       userSelect.upper= true
       container.push(upperCase)
-      console.log(userSelect.upper)
     }  else {
       userSelect.upper=false
-      console.log(userSelect.upper);
     }
   var userChoice= confirm("Would you like numeric characters?")
     if (userChoice) {
       userSelect.digits= true
       container.push(digits)
-      console.log(userSelect.digits)
     } else {
       userSelect.digits=false
-      console.log(userSelect.digits);
     }
   var userChoice= confirm("Would you like special characters?")
     if (userChoice) {
       userSelect.spec= true
       container.push(specChar)
-      console.log(userSelect.spec)
     } else {
       userSelect.spec=false
-      console.log(userSelect.spec);
     }
 
     //condition making sure user selected at least one of 4 characters to generate password
